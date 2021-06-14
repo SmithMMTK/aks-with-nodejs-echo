@@ -103,8 +103,8 @@ az ad sp create-for-rbac --skip-assignment
 
 ### Assign service principle for AKS cluster network
 ```bash
-export appid="26d20bc8-028b-4db1-8456-82fd1b825ef7"
-export clientsecret="AEJy2Cxk4qXPdWoO4OBH-OcPgYWWtNe5-o"
+export appid=$envAPPID
+export clientsecret=$envCLIENTSECRET
 
 export VNET_ID=$(az network vnet show --resource-group $rg --name $vnet --query id -o tsv)
 export SUBNET_ID=$(az network vnet subnet show --resource-group $rg --vnet-name $vnet --name $subnetname --query id -o tsv)
